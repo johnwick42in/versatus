@@ -7,8 +7,6 @@ Projects Official links
    - Twitter : https://twitter.com/VersatusLabs
    - Discord : https://discord.gg/versatus
 
-Disclaimer : This guide purely intends for educational purpose.
-
 ## Steps for Downloading Versatus Wallet Extension.
    - Go to [this link](https://itero.plasmo.com/ext/omkbidglggpedccmhohmemehpghgidaj) & follow the steps to install extension (Note: Versatus wallet is still in beta mode, so expect some issue & bugs & feel free to report it to devs on discord)
 
@@ -40,7 +38,7 @@ npm install --save @versatus/versatus-javascript
 ```sh
 npx lasrctl init hello-lasr
 ```
-- Now keypair.json file has generated at /.lasr/wallet/keypairs.json
+- Now keypair.json file has generated at /your-project-name/.lasr/wallet/keypairs.json
 - by opening this file, you can see mnemonics, secret key... copy everything & save it securely.
 - Now import this mnemonic / secret key to Versatus wallet & copy your public address.
 - Go to [Discord](https://discord.com/channels/1034112774789414963/1228424731955433493) & request some test tokens from the bot.Once test tokens arrived at your wallet, do the below command
@@ -53,6 +51,7 @@ npx lasrctl test -b example-program -i example-program-inputs
 ```
  - if You see the below response, then we are doing until here
     ![image](https://github.com/johnwick42in/versatus/assets/74258783/2c6d44d1-18e4-40b9-a321-362fd00d4b94)
+
    Now deploy
    ```sh
    npx lasrctl deploy --build example-program --symbol HELLO_WORLD --programName MY_FIRST_PROGRAM
