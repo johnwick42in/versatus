@@ -54,10 +54,36 @@ npx lasrctl test -b example-program -i example-program-inputs
 
    Now deploy
    ```sh
-   npx lasrctl deploy --build example-program --symbol HELLO_WORLD --programName MY_FIRST_PROGRAM
+   npx lasrctl deploy --build example-program --symbol ELON_SHITS --programName ZKscem
    ```
    Now you'll see a link to your playground. save them for later use.
-   
 
+## Steps to create a mintable fungible token
+
+- Use the below command for setup
+```sh
+cd
+mkdir fungible-project
+cd fungible-project
+npm init -y
+npm install typescript --save-dev
+npx tsc --init
+npm install --save @versatus/versatus-javascript
+npx lasrctl init fungible
+```
+- Now a keypair file is generated in the directory /fungible-project/.lasr/wallet/keypairs.json
+- Copy & store the keys in a secure place. copy address and get some verse from discord faucet.
+```sh
+npx lasrctl build example-program.ts
+npx lasrctl test -b example-program -i example-program-inputs
+```
+- Now replace YOUR_ACCOUNT_ADDRESS with your wallet address from /fungible-project/.lasr/wallet/keypairs.json & run the command. you can edit 'SYMBOL_NAME' 'PROGRAM_NAME' and supply if you want.
+  
+  ```sh
+  npx lasrctl deploy --build example-program --symbol SYMBOL_NAME --programName PROGRAM_NAME --initializedSupply 6900000 --totalSupply 6900000 --recipientAddress YOUR_ACCOUNT_ADDRESS \
+  --txInputs '{"imgUrl":"https://pbs.twimg.com/media/F8z1khNWAAAE7WM?format=jpg&name=900x900","paymentProgramAddress": "0x9f85fb953179fb2418faf4e5560c1ac3717e8c0f","conversionRate":"1"}'
+  ```
+ if it deployed successfully, you will get a link to the mint page. copy & share it in their [discord server](https://discord.com/channels/1034112774789414963/1034117763532337232). Devs will take a look at it, mint it & share feedback.
+
+## ## Steps to create a mintable non-fungible token
  
-      
