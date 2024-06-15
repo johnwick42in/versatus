@@ -142,3 +142,4 @@ npx lasrctl test -b example-program -i example-program-inputs
 ```sh
 npx lasrctl deploy --build example-program --symbol FAUCET --programName "Faucet me" --txInputs '{"imgUrl":"https://pbs.twimg.com/profile_images/1421740863139446787/huoxhEV3_400x400.jpg"}'
 ```
+Thanks for doing it. If you liked it please follow me on socials  [X](https://x.com/@bigiley) | [Telegram](https://t.me/johnw1k) | [Farcaster](https://warpcast.com/johnwick69)
