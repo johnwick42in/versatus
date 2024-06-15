@@ -40,7 +40,7 @@ npx lasrctl init hello-lasr
 ```
 - Now keypair.json file has generated at /your-project-name/.lasr/wallet/keypairs.json
 - by opening this file, you can see mnemonics, secret key... copy everything & save it securely.
-- Now import this mnemonic / secret key to Versatus wallet & copy your public address.
+- Now import this mnemonic / secret key to Versatus wallet & copy your wallet address.
 - Go to [Discord](https://discord.com/channels/1034112774789414963/1228424731955433493) & request some test tokens from the bot.Once test tokens arrived at your wallet, do the below command
 ```sh
 npx lasrctl build example-program.ts
@@ -80,10 +80,40 @@ npx lasrctl test -b example-program -i example-program-inputs
 - Now replace YOUR_ACCOUNT_ADDRESS with your wallet address from /fungible-project/.lasr/wallet/keypairs.json & run the command. you can edit 'SYMBOL_NAME' 'PROGRAM_NAME' and supply if you want.
   
   ```sh
-  npx lasrctl deploy --build example-program --symbol SYMBOL_NAME --programName PROGRAM_NAME --initializedSupply 6900000 --totalSupply 6900000 --recipientAddress YOUR_ACCOUNT_ADDRESS \
+  npx lasrctl deploy --build example-program --symbol eigenL --programName sreeramK --initializedSupply 6900000 --totalSupply 6900000 --recipientAddress YOUR_ACCOUNT_ADDRESS \
   --txInputs '{"imgUrl":"https://pbs.twimg.com/media/F8z1khNWAAAE7WM?format=jpg&name=900x900","paymentProgramAddress": "0x9f85fb953179fb2418faf4e5560c1ac3717e8c0f","conversionRate":"1"}'
   ```
  if it deployed successfully, you will get a link to the mint page. copy & share it in their [discord server](https://discord.com/channels/1034112774789414963/1034117763532337232). Devs will take a look at it, mint it & share feedback.
 
-## ## Steps to create a mintable non-fungible token
- 
+## ## Steps to create a non-fungible token
+- We do the setup first
+  
+ ```sh
+mkdir NFT
+cd NFT
+npm init -y
+npm install typescript --save-dev
+npx tsc --init
+npm install --save @versatus/versatus-javascript
+```
+- Then
+- 
+```sh
+npx lasrctl init non-fungible
+```
+
+- Now a keypair file is generated in the directory /NFT/.lasr/wallet/keypairs.json
+- Copy & store the keys in a secure place. copy address and get some verse from discord faucet.
+- Run the below command
+```sh
+npx lasrctl build example-program.ts
+npx lasrctl test -b example-program -i example-program-inputs
+```
+Now run DEPPPLOYYY using the below command. Replace YOUR_WALLET_ADDRESS with wallet address from /NFT/.lasr/wallet/keypairs.json 
+
+```sh
+npx lasrctl deploy --build example-program --programName "<PROGRAM_NAME>" --symbol <SYMBOL_NAME> --initializedSupply 4 --totalSupply 4 --txInputs '{"imgUrl":"https://i.seadn.io/gcs/files/32d179f19a42ceed7b4727b70d3352bb.jpg?auto=format&dpr=1&w=3840","price":"1","paymentProgramAddress":"YOUR_WALLET_ADDRESS","imgUrls":["https://i.seadn.io/gcs/files/5c10e1bf3028476390a65d6726f5340e.jpg?auto=format&dpr=1&w=3840","https://i.seadn.io/s/raw/files/cafd1614da6255ee880254ce349ce866.png?auto=format&dpr=1&w=3840","https://i.seadn.io/gcs/files/6850a6abc69d80c905951316ceb5949b.jpg?auto=format&dpr=1&w=3840","https://i.seadn.io/s/raw/files/94df22c9da16faaf95494f745bcc3e85.png?auto=format&dpr=1&w=3840"],"collection":"batz"}'
+```
+## Lets do tha faucet task now
+
+-
