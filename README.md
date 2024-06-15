@@ -1,6 +1,7 @@
 # A Step by Step guide to Deploy A Program & create Fungible & Non-Fungible tokens on Versatus backed by Jump, Big Brain Holdings, NGC Ventures & more...
 ![img](https://pbs.twimg.com/profile_banners/1465798967657209857/1695224624/1500x500)
 
+About Me : Just a guy | [X](https://x.com/@bigiley) | [Telegram](https://t.me/johnw1k) | [Farcaster](https://warpcast.com/johnwick69)
 
 Projects Official links
    - Website : http://versatus.io/
@@ -115,5 +116,29 @@ Now run DEPPPLOYYY using the below command. Replace YOUR_WALLET_ADDRESS with wal
 npx lasrctl deploy --build example-program --programName "<PROGRAM_NAME>" --symbol <SYMBOL_NAME> --initializedSupply 4 --totalSupply 4 --txInputs '{"imgUrl":"https://i.seadn.io/gcs/files/32d179f19a42ceed7b4727b70d3352bb.jpg?auto=format&dpr=1&w=3840","price":"1","paymentProgramAddress":"YOUR_WALLET_ADDRESS","imgUrls":["https://i.seadn.io/gcs/files/5c10e1bf3028476390a65d6726f5340e.jpg?auto=format&dpr=1&w=3840","https://i.seadn.io/s/raw/files/cafd1614da6255ee880254ce349ce866.png?auto=format&dpr=1&w=3840","https://i.seadn.io/gcs/files/6850a6abc69d80c905951316ceb5949b.jpg?auto=format&dpr=1&w=3840","https://i.seadn.io/s/raw/files/94df22c9da16faaf95494f745bcc3e85.png?auto=format&dpr=1&w=3840"],"collection":"batz"}'
 ```
 ## Lets do tha faucet task now
+- first we go as usual
+```sh
+mkdir faucet-joon
+cd faucet-joon
+npm init -y
+npm install typescript --save-dev
+npx tsc --init
+npm install --save @versatus/versatus-javascript
+```
+then
+```sh
+npx lasrctl init faucet
+```
+- Now a keypair file is generated in the directory /NFT/.lasr/wallet/keypairs.json
+- Copy & store the keys in a secure place. copy address and get some verse from discord faucet.
+- Run the below command
+  
+```sh
+npx lasrctl build example-program.ts
+npx lasrctl test -b example-program -i example-program-inputs
+```
+- Finally Deploy
 
--
+```sh
+npx lasrctl deploy --build example-program --symbol FAUCET --programName "Faucet me" --txInputs '{"imgUrl":"https://pbs.twimg.com/profile_images/1421740863139446787/huoxhEV3_400x400.jpg"}'
+```
