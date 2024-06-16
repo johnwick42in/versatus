@@ -13,17 +13,26 @@ Projects Official links
 
 ## Setup & Deploy A Program
 
-  - Make sure you have Node.Js V18 installed in your Ubuntu. To check node.js version run the below code
-    ```sh
+  - Make sure you have Node.Js V18 installed in your Ubuntu. If Node.Js is not installed in your machine, you may install it using the command below:
+
+ ```sh
+    sudo apt update && sudo apt install -y curl && curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt install -y nodejs
+```
+  
+  -  You can verify that Node.js and npm were installed correctly by checking their versions:
+
+```sh
     node -v
-    ```
+```
   - if it is showing above 18, you can skip to next step & if not, you need to upgrade your node.js using the below command  
     ```sh
     sudo apt-get remove -y nodejs
     curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
     sudo apt-get install -y nodejs
     ```
+  
   - To setup your project you can use the below command. you can edit 'your-project-name' from below.
+
 ```sh
 mkdir your-project-name
 cd your-project-name
@@ -32,6 +41,7 @@ npm install typescript --save-dev
 npx tsc --init
 ```
 - Install Versatus project
+
 ```sh
 npm install --save @versatus/versatus-javascript
 ```
