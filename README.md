@@ -22,11 +22,11 @@ Projects Official links
   -  You can verify that Node.js and npm were installed correctly by checking their versions:
 
 ```sh
-    node -v
+node -v
 ```
   
   ```sh
-    npm -v
+npm -v
 ```
   
   - if it is showing above 18, you can skip to next step & if not, you need to upgrade your node.js using the below command  
