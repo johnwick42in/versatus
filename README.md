@@ -24,6 +24,11 @@ Projects Official links
 ```sh
     node -v
 ```
+  
+  ```sh
+    npm -v
+```
+  
   - if it is showing above 18, you can skip to next step & if not, you need to upgrade your node.js using the below command  
     ```sh
     sudo apt-get remove -y nodejs
