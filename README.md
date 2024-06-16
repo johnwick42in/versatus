@@ -54,12 +54,14 @@ npm install --save @versatus/versatus-javascript
 ```sh
 npx lasrctl init hello-lasr
 ```
-- Now keypair.json file has generated at /your-project-name/.lasr/wallet/keypair.json
+
+Now keypair.json file has generated at /your-project-name/.lasr/wallet/keypair.json
 By opening this file, you can see mnemonics, secret key... copy everything & save it securely. Open it by running, you must run this command from inside of your project directory:
 
-  ```sh
- nano .lasr/wallet/keypair.json
+```sh
+nano .lasr/wallet/keypair.json
 ```
+
 
 - Now import this mnemonic / secret key to Versatus wallet & copy your wallet address.
 - Go to [Discord](https://discord.com/channels/1034112774789414963/1228424731955433493) & request some test tokens from the bot.Once test tokens arrived at your wallet, do the below command
