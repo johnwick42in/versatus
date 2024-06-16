@@ -16,7 +16,7 @@ Projects Official links
   - Make sure you have Node.Js V18 installed in your Ubuntu. If Node.Js is not installed in your machine, you may install it using the command below:
 
  ```sh
-    sudo apt update && sudo apt install -y curl && curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt install -y nodejs
+sudo apt update && sudo apt install -y curl && curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt install -y nodejs
 ```
   
   -  You can verify that Node.js and npm were installed correctly by checking their versions:
