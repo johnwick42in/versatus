@@ -50,7 +50,7 @@ then
 ```sh
 npx lasrctl test -b example-program -i example-program-inputs
 ```
- - if You see the below response, then we are doing until here
+ - if You see the below response, then we are doing good until here
     ![image](https://github.com/johnwick42in/versatus/assets/74258783/2c6d44d1-18e4-40b9-a321-362fd00d4b94)
 
    Now deploy
@@ -59,7 +59,7 @@ npx lasrctl test -b example-program -i example-program-inputs
    ```
    Now you'll see a link to your playground. save them for later use.
 
-## Steps to create a mintable fungible token
+## Steps to create a mintable fungible token & create a faucet
 
 - Use the below command for setup
 ```sh
@@ -84,12 +84,41 @@ npx lasrctl test -b example-program -i example-program-inputs
   npx lasrctl deploy --build example-program --symbol eigenL --programName sreeramK --initializedSupply 6900000 --totalSupply 6900000 --recipientAddress YOUR_ACCOUNT_ADDRESS \
   --txInputs '{"imgUrl":"https://pbs.twimg.com/media/F8z1khNWAAAE7WM?format=jpg&name=900x900","paymentProgramAddress": "0x9f85fb953179fb2418faf4e5560c1ac3717e8c0f","conversionRate":"1"}'
   ```
- if it deployed successfully, you will get a link to the mint page. copy & share it in their [discord server](https://discord.com/channels/1034112774789414963/1034117763532337232). Devs will take a look at it, mint it & share feedback.
+ if it deployed successfully, you will get a link to the mint page.This is your fungible program . copy & share it in their [discord server](https://discord.com/channels/1034112774789414963/1034117763532337232). Devs will take a look at it, mint it & share feedback.
+
+ Now we have created a mintable token, we will now move on to create a faucet
+
+```sh
+npx lasrctl init faucet
+npx lasrctl test -b example-program -i example-program-inputs
+```
+Then
+ ```sh
+npx lasrctl deploy --build example-program --symbol FAUCET --programName "Faucet for anything fungible" --txInputs '{"imgUrl":"https://pbs.twimg.com/profile_images/1421740863139446787/huoxhEV3_400x400.jpg"}'
+```
+Now you'll get a playground link. click copy & paste it in your browser. This is your faucet program.
+
+Then
+Replace 'FAUCET_PROGRAM_ADDRESS' with your Faucet program address & replace 'FUNGIBLE_PROGRAM_ADDRESS' with the your fungible program address.
+
+```sh
+npx lasrctl call --programAddress FAUCET_PROGRAM_ADDRESS --op addProgram \
+  --txInputs '{"programAddress":"FUNGIBLE_PROGRAM_ADDRESS","amountToAdd":"1000","faucetAmount":"1","addressTimeoutMinutes":"1"}'
+```
+
+Finally, like previous step, change faucet and program address and replace 'SOME_OTHER_ADDRESS' with your own address from keypair.
+
+```sh
+npx lasrctl call --programAddress FAUCET_PROGRAM_ADDRESS --op faucet \
+  --txInputs '{"programToSend":"FUNGIBLE_PROGRAM_ADDRESS","to":"SOME_OTHER_ADDRESS"}'
+```
+
 
 ## ## Steps to create a non-fungible token
 - We do the setup first
   
  ```sh
+cd
 mkdir NFT
 cd NFT
 npm init -y
