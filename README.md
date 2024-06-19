@@ -13,17 +13,31 @@ Projects Official links
 
 ## Setup & Deploy A Program
 
-  - Make sure you have Node.Js V18 installed in your Ubuntu. To check node.js version run the below code
-    ```sh
-    node -v
-    ```
+  - Make sure you have Node.Js V18 installed in your Ubuntu. If Node.Js is not installed in your machine, you may install it using the command below:
+
+ ```sh
+sudo apt update && sudo apt install -y curl && curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt install -y nodejs
+```
+  
+  -  You can verify that Node.js and npm were installed correctly by checking their versions:
+
+```sh
+node -v
+```
+  
+  ```sh
+npm -v
+```
+  
   - if it is showing above 18, you can skip to next step & if not, you need to upgrade your node.js using the below command  
     ```sh
     sudo apt-get remove -y nodejs
     curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
     sudo apt-get install -y nodejs
     ```
+  
   - To setup your project you can use the below command. you can edit 'your-project-name' from below.
+
 ```sh
 mkdir your-project-name
 cd your-project-name
@@ -32,6 +46,7 @@ npm install typescript --save-dev
 npx tsc --init
 ```
 - Install Versatus project
+
 ```sh
 npm install --save @versatus/versatus-javascript
 ```
@@ -39,8 +54,15 @@ npm install --save @versatus/versatus-javascript
 ```sh
 npx lasrctl init hello-lasr
 ```
-- Now keypair.json file has generated at /your-project-name/.lasr/wallet/keypairs.json
-- by opening this file, you can see mnemonics, secret key... copy everything & save it securely.
+
+Now keypair.json file has generated at /your-project-name/.lasr/wallet/keypair.json
+By opening this file, you can see mnemonics, secret key... copy everything & save it securely. Open it by running, you must run this command from inside of your project directory:
+
+```sh
+nano .lasr/wallet/keypair.json
+```
+
+
 - Now import this mnemonic / secret key to Versatus wallet & copy your wallet address.
 - Go to [Discord](https://discord.com/channels/1034112774789414963/1228424731955433493) & request some test tokens from the bot.Once test tokens arrived at your wallet, do the below command
 ```sh
